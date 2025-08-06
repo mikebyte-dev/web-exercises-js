@@ -54,7 +54,7 @@ def create_json_file(PROJECTS_ROOT: str) -> None:
         list_to_json.append(project_info)
 
     # NOTE: Change the name of the document PATH_JSON_DATA to make functional.
-    PATH_JSON_DATA = "./data/test.json"
+    PATH_JSON_DATA = "./data/projects.json"
 
     # HACK: Right now the script remove the projects.json before to create it again all the file.
     # TODO: Implement logic to compare and update projects.json.

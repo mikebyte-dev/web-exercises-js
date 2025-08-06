@@ -7,8 +7,7 @@ const infoP = document.getElementById("info-paragraph");
 window.addEventListener("load", () => {
   // TODO: change  the tag to the html and put here onle the change of class to hide or show the action
   // sectionProjects.innerHTML =
-
-  console.log("loading ...");
+  // console.log("loading ...");
 });
 
 /**
@@ -35,7 +34,7 @@ function renderProjects(projects, container) {
   // Loop through the object and create the links
   projects.forEach((project) => {
     // Create a new link element)
-    console.log(`Project Id: ${project.id} Name: ${project.name}`);
+    // console.log(`Project Id: ${project.id} Name: ${project.name}`);
 
     container.innerHTML += `
         <article id=${project.id} class="card-projects" href="">

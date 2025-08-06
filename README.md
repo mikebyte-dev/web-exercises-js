@@ -10,13 +10,11 @@ personal study and practice of web programming.
 
 ## Project List
 
-### Web Development Projects Tracker
-
-#### Projects To Do
+### Projects To Do
 
 | #   | Project          | Description                    | Done |
 | --- | ---------------- | ------------------------------ | ---- |
-| 0   | Projects-index   | Index of all projects          | [ ]  |
+| 0   | Projects-index   | Index of all projects          | [✅] |
 | 1   | Caesar Cipher    | Caesar cipher (shift)          | [ ]  |
 | 2   | Calculator       | Basic calculator               | [ ]  |
 | 3   | Color Palettes   | Generates color palettes       | [ ]  |

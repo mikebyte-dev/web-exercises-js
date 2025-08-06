@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "name": "calculator",
+    "path": "projects/calculator",
+    "description": "This is a description of the project calculator",
+    "tumbnail": "projects/calculator/src/assets/calculator.img"
+  },
+  {
+    "id": 1,
+    "name": "caesar-cipher",
+    "path": "projects/caesar-cipher",
+    "description": "This is a description of the project cipher-caesar",
+    "tumbnail": "projects/caesar-cipher/src/assets/caesar-cipher.img"
+  }
+]
