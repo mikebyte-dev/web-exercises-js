@@ -45,9 +45,9 @@ def create_json_file(PROJECTS_ROOT: str) -> None:
         project_info = {
             "id": index,
             "name": project,
-            "path": f"{PROJECTS_ROOT}/{project}",
+            "path": f"./{PROJECTS_ROOT}/{project}/index.html",
             "description": get_description(PROJECTS_ROOT, project),
-            "tumbnail": f"{PROJECTS_ROOT}/{project}/src/assets/{project}.img",
+            "tumbnail": f"./{PROJECTS_ROOT}/{project}/src/assets/{project}.img",
         }
 
         print(f"Creating the data of -> {project}")

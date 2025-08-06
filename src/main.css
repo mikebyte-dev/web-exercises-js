@@ -32,6 +32,20 @@ h3 {
   text-shadow: var(--shadow);
 }
 
+.card-projects {
+  text-decoration: none;
+  transition: color var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.card-projects:visited {
+  color: var(--color-text-dark);
+}
+.project-name {
+  color: var(--color-text-dark);
+  font-size: 1.5em;
+}
+
 .loading {
   position: fixed;
   top: 0;
@@ -204,14 +218,4 @@ footer {
   padding: 24px;
   font-size: 1em;
   color: var(--color-text-dark);
-}
-
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-a:hover {
-  text-decoration: underline;
 }

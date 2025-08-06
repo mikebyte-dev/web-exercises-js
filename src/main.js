@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
  * @typedef {object} Project
  * @property {string} id - Un identificador único para el proyecto.
  * @property {string} name - El nombre del proyecto.
- * @property {string} directory - La ruta relativa al directorio del proyecto.
+ * @property {string} path - La ruta relativa al directorio del proyecto.
  * @property {string} description - Una breve descripción del proyecto.
  * @property {string} img - La ruta a una imagen de miniatura.
  */
@@ -34,16 +34,18 @@ function renderProjects(projects, container) {
   // Loop through the object and create the links
   projects.forEach((project) => {
     // Create a new link element)
-    // console.log(`Project Id: ${project.id} Name: ${project.name}`);
+    console.log(
+      `Project Id: ${project.id} Name: ${project.name} path: ${project.path}`,
+    );
 
     container.innerHTML += `
-        <article id=${project.id} class="card-projects" href="">
-          <img src="" alt="" />
+        <a href="${project.path}" id=${project.id} class="card-projects" >
+          <img class="img-card" src="" alt="" />
           <label for="">
-            <h3>${project.name}</h3>
-            <p>${project.description}</p>
+            <h3 class="project-name">${project.name}</h3>
+            <p class="project-description">${project.description}</p>
           </label>
-        </article>`;
+        </a>`;
   });
 }
 
