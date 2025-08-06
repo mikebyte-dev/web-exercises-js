@@ -49,7 +49,7 @@ function renderProjects(projects, container) {
 
 //  API fetch
 // Path to your JSON file
-const jsonProjects = "../data/projects.json";
+const jsonProjects = "./data/projects.json";
 
 // Use an async function to handle the request cleanly
 async function loadProjets() {
