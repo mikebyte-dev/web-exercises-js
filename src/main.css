@@ -1,0 +1,217 @@
+:root {
+  --color-bg-dark: #181a20;
+  --color-text-dark: #f5f6fa;
+  --color-accent: #4f8cff;
+  --color-card-dark: #23262f;
+  --shadow: 8px 8px 32px #00000099;
+  --color-border: #353945;
+  --radius: 16px;
+  --transition: all 0.3s ease-in-out;
+  --font-family: "Nerd Font", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-accent);
+  margin: 0;
+  padding: 0;
+  text-shadow: var(--shadow);
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  z-index: 9999;
+
+  color: var(--color-accent);
+  font-size: 2em;
+}
+
+.header-page {
+  background-color: #23262f22;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 0 0 16px 16px;
+
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  left: 20px;
+}
+
+.header-projects {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: var(--color-accent);
+  margin: 0;
+}
+
+/* Search bar */
+.label-search {
+  display: flex;
+  align-content: center;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 10px;
+}
+
+/* Para input type="search" en navegadores WebKit (Chrome, Safari, Edge Chromium) */
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.input-search {
+  width: 100%;
+  font-size: 1.2em;
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-dark);
+  font-family: var(--font-family);
+}
+
+.input-search:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-accent);
+  font-size: 1.2em;
+  transition: color var(--transition);
+}
+
+.icon {
+  width: 28px; /* Define el tamaño de tus íconos */
+  height: 28px;
+  fill: currentColor;
+  stroke: black; /* Grosor del trazo */
+  stroke-width: 0.1; /* Grosor del trazo */
+  background-color: transparent; /* Asegura que el fondo sea transparente */
+  display: inline-block; /* Asegura que el ícono se comporte como un elemento de texto */
+  vertical-align: middle; /* Alineación vertical */
+}
+
+.icon:hover {
+  filter: drop-shadow(3px 3px 5px var(--color-accent));
+}
+
+.search-icon {
+  color: var(--color-accent);
+}
+
+.home-icon {
+  color: green;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  width: 80%;
+  min-height: 65vh;
+  box-sizing: content-box;
+  background: var(--color-card-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: auto;
+  margin-top: 150px; /* Espacio para el header fijo */
+  padding: 18px;
+  border: 2px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.section-projects {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+  gap: 24px;
+  grid-auto-rows: minmax(350px, auto);
+  row-gap: 32px;
+  transition: var(--transition);
+}
+
+.card-projects {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 300px;
+  height: 350px;
+  margin: 8px;
+  padding: 16px;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.card-projects:hover {
+  box-shadow: 6px 6px 32px var(--color-accent);
+  transform: translate(-3px, -3px) scale(1.1) rotate(1.8deg);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 24px;
+  font-size: 1em;
+  color: var(--color-text-dark);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
