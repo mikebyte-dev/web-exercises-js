@@ -22,8 +22,13 @@ def get_description(PROJECTS_ROOT: str, project_name: str) -> str:
     Returns:
         str: Return the description of the project.
     """
-    with open(f"{PROJECTS_ROOT}/{project_name}/description.txt", "r") as description:
-        return description.read().strip()
+    description_path = f"{PROJECTS_ROOT}/{project_name}/description.txt"
+    if os.path.exists(description_path):
+        with open(description_path, "r") as description:
+            return description.read().strip()
+    else:
+        print(f"Description file not found for project: {project_name}")
+        return "No description available."
 
 
 # Create a JSON file, with the projects information: ✅

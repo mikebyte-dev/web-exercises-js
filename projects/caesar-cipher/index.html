@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="src/styles.css" rel="stylesheet" />
+    <script src="./src/main.js" defer></script>
   </head>
   <body>
-    <h1>Caesar-Cipher</h1>
+    <main class="app">
+      <h1>Caesar-Cipher</h1>
+      <section class="screens">
+        <textarea
+          id="input-text"
+          class="input"
+          rows="15"
+          cols="30"
+          placeholder="Here your text..."
+        ></textarea>
+        <textarea
+          id="output-text"
+          class="output"
+          rows="15"
+          cols="30"
+          placeholder="The Encrypt/Decrypt here..."
+          disabled
+        ></textarea>
+      </section>
+      <section class="controls">
+        <label class="encrypt-force" for="encrypt-force"
+          >Force: <span class="force" id="span-force">5</span>
+          <input type="range" id="encrypt-force" value="5" max="25" min="0" />
+        </label>
+        <div class="buttons">
+          <button type="button" id="encrypt">Encrypt</button>
+          <button type="button" id="decrypt">Decrypt</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
