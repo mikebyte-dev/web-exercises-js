@@ -15,7 +15,7 @@ personal study and practice of web programming.
 | #   | Project          | Description                    | Done |
 | --- | ---------------- | ------------------------------ | ---- |
 | 0   | Projects-index   | Index of all projects          | [✅] |
-| 1   | Caesar Cipher    | Caesar cipher (shift)          | [ ]  |
+| 1   | Caesar Cipher    | Caesar cipher (shift)          | [✅] |
 | 2   | Calculator       | Basic calculator               | [ ]  |
 | 3   | Color Palettes   | Generates color palettes       | [ ]  |
 | 4   | Counter          | Counter with several functions | [ ]  |

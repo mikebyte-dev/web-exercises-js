@@ -1,6 +1,13 @@
 [
   {
     "id": 0,
+    "name": "calculator",
+    "path": "./projects/calculator/index.html",
+    "description": "Basic calculator that can perform basic arithmetic operations like addition, subtraction, multiplication, and division.",
+    "tumbnail": "./projects/calculator/src/assets/calculator.img"
+  },
+  {
+    "id": 1,
     "name": "caesar-cipher",
     "path": "./projects/caesar-cipher/index.html",
     "description": "This is a description of the project cipher-caesar",
