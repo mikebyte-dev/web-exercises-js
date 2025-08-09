@@ -34,21 +34,21 @@ body {
     margin: auto;
     background-color: #161616;
     border: 6px solid #161616;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 32px 4px 32px 4px;
 
     @media (max-width: 500px) {
       width: 100%;
       height: 100%;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding: 45px 2px 45px 2px;
       border: 0;
+      border-radius: 0;
 
       .screen {
         height: 30%;
@@ -74,13 +74,42 @@ body {
       }
     }
 
+    .icon-container {
+      width: 50px;
+      height: 50px;
+      align-self: flex-end;
+      margin: 0 34px 6px 0;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 50%;
+      &:hover {
+        .icon {
+          fill: #5cd97c; /* Color del ícono al pasar el mouse */
+        }
+      }
+      &:active {
+        .icon {
+          fill: #34c759; /* Color del ícono al hacer clic */
+        }
+      }
+    }
+
+    .icon {
+      width: 60px; /* Define el tamaño de tus íconos */
+      height: 60px;
+      fill: #34c759; /* Color del ícono */
+      background-color: transparent; /* Asegura que el fondo sea transparente */
+      display: inline-block; /* Asegura que el ícono se comporte como un elemento de texto */
+      vertical-align: middle; /* Alineación vertical */
+      transition: all 0.2s ease-in-out;
+    }
+
     .middle-line {
       width: 98%;
-      height: 8px;
+      height: 4px;
       background-color: #404040;
       border: none;
       border-radius: 8px;
-      margin: 12px 0;
       margin-bottom: 20px;
     }
 
@@ -102,18 +131,29 @@ body {
         background-color: #202020;
         color: #e2e2e2;
         cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:active {
-          font-size: 1.5em;
-        }
+        transition: all 0.2s ease-in-out;
 
         &:hover {
           background-color: #666;
         }
 
+        &:active {
+          background-color: #404040;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
         &.functions {
           background-color: #404040;
+
+          &:hover {
+            background-color: #666;
+          }
+          &:active {
+            background-color: #404040;
+          }
         }
 
         &.operator {
@@ -124,19 +164,18 @@ body {
             background-color: #ccc;
           }
           &:active {
-            font-size: 1.8em;
+            background-color: #aaa;
           }
         }
 
         &#equals {
           color: #e2e2e2;
-          font-size: 2.5em;
           background-color: #34c759;
           &:hover {
             background-color: #5cd97c;
           }
           &:active {
-            font-size: 2em;
+            background-color: #34c759;
           }
         }
       }
