@@ -11,14 +11,7 @@ html {
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+    "Segoe UI";
 }
 
 body {
@@ -30,7 +23,7 @@ body {
 
   main {
     width: 450px;
-    height: 600px;
+    height: 680px;
     margin: auto;
     background-color: #161616;
     border: 6px solid #161616;
@@ -58,9 +51,9 @@ body {
     .screen {
       width: 100%;
       height: 25%;
+      align-content: center;
 
       input {
-        font-family: roboto, sans-serif;
         padding: 6px;
         margin: 0;
         text-align: right;
@@ -69,7 +62,7 @@ body {
         color: #e2e2e2;
         background-color: #161616;
         width: 100%;
-        height: 50%;
+        height: 100%;
         border: none;
       }
     }
@@ -82,6 +75,8 @@ body {
       cursor: pointer;
       text-align: center;
       border-radius: 50%;
+      -webkit-tap-highlight-color: transparent;
+
       &:hover {
         .icon {
           fill: #5cd97c; /* Color del ícono al pasar el mouse */
@@ -132,17 +127,16 @@ body {
         color: #e2e2e2;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
+
+        &:focus,
+        &:active {
+          outline: none;
+          box-shadow: none;
+        }
 
         &:hover {
           background-color: #666;
-        }
-
-        &:active {
-          background-color: #404040;
-        }
-
-        &:focus {
-          outline: none;
         }
 
         &.functions {
@@ -168,7 +162,7 @@ body {
           }
         }
 
-        &#equals {
+        &.equal {
           color: #e2e2e2;
           background-color: #34c759;
           &:hover {

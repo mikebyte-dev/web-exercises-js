@@ -5,39 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Calculator</title>
     <link href="./src/styles.css" rel="stylesheet" />
-    <script src="./src/main.js"></script>
+    <script src="./src/main.js" defer></script>
   </head>
   <body>
     <main>
       <section class="screen">
-        <input type="text" class="display" id="display" disabled value="0" />
-        <input type="text" class="preview" id="preview" disabled value="" />
+        <input
+          type="text"
+          class="display"
+          id="input-display"
+          value="0"
+          disabled
+        />
       </section>
-      <svg class="icon-container" id="backspace">
-        <use class="icon" href="/src/assets/icons/icons.svg#backspace"></use>
+      <svg class="icon-container btn" id="backspace">
+        <use class="icon" href="./src/assets/icons.svg#backspace"></use>
       </svg>
       <hr class="middle-line" />
       <section class="controls">
-        <button class="btn functions" id="clear">C</button>
-        <button class="btn functions" id="backspace">( )</button>
-        <button class="btn functions" id="percent">%</button>
-        <button class="btn operator" id="divide">÷</button>
+        <button class="btn functions" id="c">C</button>
+        <button class="btn functions" id="()">( )</button>
+        <button class="btn functions" id="%">%</button>
+        <button class="btn operator" id="/">÷</button>
         <button class="btn" id="7">7</button>
         <button class="btn" id="8">8</button>
         <button class="btn" id="9">9</button>
-        <button class="btn operator" id="multiply">×</button>
+        <button class="btn operator" id="*">×</button>
         <button class="btn" id="4">4</button>
         <button class="btn" id="5">5</button>
         <button class="btn" id="6">6</button>
-        <button class="btn operator" id="subtract">−</button>
+        <button class="btn operator" id="-">−</button>
         <button class="btn" id="1">1</button>
         <button class="btn" id="2">2</button>
         <button class="btn" id="3">3</button>
-        <button class="btn operator" id="add">+</button>
-        <button class="btn" id="negate">+/-</button>
+        <button class="btn operator" id="+">+</button>
+        <button class="btn" id="+/-">+/-</button>
         <button class="btn" id="0">0</button>
-        <button class="btn" id="decimal">.</button>
-        <button class="btn operator" id="equals">=</button>
+        <button class="btn" id=".">.</button>
+        <button class="btn operator equal" id="=">=</button>
       </section>
     </main>
   </body>
