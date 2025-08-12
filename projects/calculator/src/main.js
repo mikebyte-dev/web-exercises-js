@@ -6,6 +6,7 @@ class Calculator {
     this.currentOperand = "";
     this.operator = undefined;
     this.equalResult = false;
+    this.percentageOperation = false;
   }
 
   handleNumber(number) {
@@ -21,6 +22,11 @@ class Calculator {
     if (this.equalResult) {
       this.currentOperand = number;
       this.equalResult = false;
+    } else if (this.percentageOperation) {
+      this.previousOperand = this.currentOperand;
+      this.operator = "*";
+      this.currentOperand = number;
+      this.percentageOperation = false;
     } else this.currentOperand += number;
 
     // concatenate the new number to the currentOperand as a string
@@ -74,9 +80,7 @@ class Calculator {
     }
 
     // Change the global values
-    this.currentOperand = computation.toString().includes(".")
-      ? computation.toFixed(2)
-      : computation;
+    this.currentOperand = computation;
 
     this.previousOperand = "";
     this.equalResult = true;
@@ -96,6 +100,19 @@ class Calculator {
     }
   }
 
+  negative() {
+    // make negative the currentOperand
+    if (!this.currentOperand) this.currentOperand = "-";
+    else this.currentOperand = -this.currentOperand;
+  }
+
+  handlePercentage() {
+    // Method to handle the percentage button.
+
+    this.currentOperand = this.currentOperand / 100;
+    this.percentageOperation = true;
+  }
+
   updateScreen() {
     // method to update the screen
     if (this.currentOperand) return this.currentOperand;
@@ -107,8 +124,8 @@ class Calculator {
 // 2. Get elements of the DOM
 const inputDisplay = document.getElementById("input-display");
 const btns = document.querySelectorAll(".btn");
-console.log(btns);
 
+// 3. Calculator
 const calculator = new Calculator();
 
 btns.forEach((btn) => {
@@ -122,6 +139,13 @@ btns.forEach((btn) => {
       calculator.compute();
     } else if (btn.id === "backspace") {
       calculator.backspace();
+    } else if (btn.id === "+/-") {
+      calculator.negative();
+    } else if (btn.id === "0") {
+      // HACK: handle the number zero, cause the parseFloat() don't take it
+      calculator.handleNumber(btn.id);
+    } else if (btn.id === "%") {
+      calculator.handlePercentage();
     } else {
       // if its a operator
       calculator.handleOperator(btn.id);
