@@ -35,21 +35,23 @@ class Calculator {
   handleOperator(op) {
     // Method to handle the operators
     // if the currentOperand is empty, there's nothing to operate on
-    if (this.currentOperand === "") return;
 
     // if there's already a previousOperand, compute the result first
     if (this.previousOperand) {
       this.compute();
+    } else if (!this.currentOperand) return;
+
+    // if there is other operator change for the new wintry
+    if (this.operator) {
+      this.operator = op;
+    } else {
+      // store the operator
+      this.operator = op;
+      // move the currentOperand to the previousOperand
+      this.previousOperand = this.currentOperand;
+      // clear the currentOperand
+      this.currentOperand = "";
     }
-
-    // store the operator
-    this.operator = op;
-
-    // move the currentOperand to the previousOperand
-    this.previousOperand = this.currentOperand;
-
-    // clear the currentOperand
-    this.currentOperand = "";
   }
 
   compute() {
@@ -92,11 +94,18 @@ class Calculator {
     this.previousOperand = "";
     this.currentOperand = "";
     this.operator = undefined;
+    this.equalResult = false;
+    this.percentageOperation = false;
   }
 
   backspace() {
     if (this.currentOperand) {
       this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    } else if (this.operator) {
+      // Handle if tries to delete an operator
+      this.operator = undefined;
+      this.currentOperand = this.previousOperand;
+      this.previousOperand = "";
     }
   }
 
@@ -108,8 +117,20 @@ class Calculator {
 
   handlePercentage() {
     // Method to handle the percentage button.
+    let prev = parseFloat(this.previousOperand);
+    let current = parseFloat(this.currentOperand);
 
-    this.currentOperand = this.currentOperand / 100;
+    if (this.operator) {
+      if (this.operator === " +" || this.operator === "-") {
+        this.currentOperand = prev * (current / 100);
+      } else if (this.operator === "*" || this.operator === "/") {
+        this.currentOperand = current / 100;
+      }
+    } else {
+      this.currentOperand = this.currentOperand / 100;
+      this.operator = "*";
+    }
+
     this.percentageOperation = true;
   }
 
@@ -142,7 +163,7 @@ btns.forEach((btn) => {
     } else if (btn.id === "+/-") {
       calculator.negative();
     } else if (btn.id === "0") {
-      // HACK: handle the number zero, cause the parseFloat() don't take it
+      // HACK: handle the number zero, cause the parseFloat() don't take it like a number
       calculator.handleNumber(btn.id);
     } else if (btn.id === "%") {
       calculator.handlePercentage();
