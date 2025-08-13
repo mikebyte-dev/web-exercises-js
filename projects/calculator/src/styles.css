@@ -115,18 +115,18 @@ body {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(5, 1fr);
-      gap: 6px 16px;
+      gap: 12px;
 
       button {
         width: 100%;
         height: 100%;
-        font-size: 1.8em;
+        font-size: 2em;
         border: none;
-        border-radius: 50%;
+        border-radius: 12px;
         background-color: #202020;
         color: #e2e2e2;
         cursor: pointer;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.1s ease-in-out;
         -webkit-tap-highlight-color: transparent;
 
         &:focus,
@@ -135,41 +135,36 @@ body {
           box-shadow: none;
         }
 
-        &:hover {
-          background-color: #666;
-        }
-
-        &.functions {
-          background-color: #404040;
-
-          &:hover {
-            background-color: #666;
-          }
-          &:active {
-            background-color: #404040;
-          }
+        &:active {
+          font-size: 1.6em;
+          background-color: #444;
         }
 
         &.operator {
           font-size: 2.2em;
           background-color: #aaa;
           color: #121212;
-          &:hover {
-            background-color: #ccc;
-          }
           &:active {
-            background-color: #aaa;
+            background-color: #ccc;
+            font-size: 1.5em;
+          }
+        }
+
+        &.clear {
+          grid-column: span 2;
+          background-color: #c22;
+          &:active {
+            background-color: #e32;
+            font-size: 1.5em;
           }
         }
 
         &.equal {
           color: #e2e2e2;
           background-color: #34c759;
-          &:hover {
-            background-color: #5cd97c;
-          }
           &:active {
-            background-color: #34c759;
+            background-color: #5cd97c;
+            font-size: 1.5em;
           }
         }
       }
