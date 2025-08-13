@@ -121,7 +121,7 @@ class Calculator {
     let current = parseFloat(this.currentOperand);
 
     if (this.operator) {
-      if (this.operator === " +" || this.operator === "-") {
+      if (this.operator === "+" || this.operator === "-") {
         this.currentOperand = prev * (current / 100);
       } else if (this.operator === "*" || this.operator === "/") {
         this.currentOperand = current / 100;
@@ -173,4 +173,24 @@ btns.forEach((btn) => {
     }
     inputDisplay.value = calculator.updateScreen();
   });
+});
+
+// Add listener of the keys
+document.addEventListener("keydown", (e) => {
+  if (e.key >= "0" && e.key <= "9") {
+    calculator.handleNumber(e.key);
+    console.log(e.key);
+  } else if (e.key === "Escape") {
+    calculator.clear();
+  } else if (e.key === "=" || e.key === "Enter") {
+    calculator.compute();
+  } else if (e.key === "+" || e.key === "-" || e.key === "/" || e.key === "*") {
+    calculator.handleOperator(e.key);
+  } else if (e.key === "Backspace") {
+    calculator.backspace();
+  } else if (e.key === "%") {
+    calculator.handlePercentage();
+  }
+
+  inputDisplay.value = calculator.updateScreen();
 });
