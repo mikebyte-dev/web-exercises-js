@@ -16,7 +16,7 @@ personal study and practice of web programming.
 | --- | ---------------- | ------------------------------ | ---- |
 | 0   | Projects-index   | Index of all projects          | [✅] |
 | 1   | Caesar Cipher    | Caesar cipher (shift)          | [✅] |
-| 2   | Calculator       | Basic calculator               | [ ]  |
+| 2   | Calculator       | Basic calculator               | [✅] |
 | 3   | Color Palettes   | Generates color palettes       | [ ]  |
 | 4   | Counter          | Counter with several functions | [ ]  |
 | 5   | Hangman          | Classic hangman game           | [ ]  |
@@ -25,12 +25,12 @@ personal study and practice of web programming.
 | 8   | Quick Notes      | Simple notes app               | [ ]  |
 | 9   | Quote Generator  | Shows random quotes            | [ ]  |
 | 10  | Reviews App      | Reviews with names and photos  | [ ]  |
-| 11  | Rock Paper Scis. | Rock, paper, scissors game     | [ ]  |
+| 11  | Rock Paper       | Rock, paper, scissors game     | [ ]  |
 | 12  | Snake Game       | Classic snake game             | [ ]  |
 | 13  | To-do List       | Task list                      | [ ]  |
 | 14  | Weather App      | Weather info via API           | [ ]  |
 | 15  | Pomodoro Timer   | Pomodoro timer                 | [ ]  |
-| 16  | Currency Conv.   | Currency converter             | [ ]  |
+| 16  | Currency         | Currency converter             | [ ]  |
 | 17  | Quiz App         | Multiple choice quiz           | [ ]  |
 | 18  | Typing Speed     | Typing speed test              | [ ]  |
 | 19  | Image Slider     | Image carousel                 | [ ]  |

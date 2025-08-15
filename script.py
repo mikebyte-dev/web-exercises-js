@@ -1,5 +1,18 @@
 import os
 import json
+from typing import TypedDict
+
+
+# Define a type for the project information dictionary
+class ProjectInfoBase(TypedDict):
+    id: int
+    name: str
+    path: str
+    description: str
+
+
+class ProjectInfo(ProjectInfoBase, total=False):
+    thumbnail: str
 
 
 # Define the root directory for projects: ✅
@@ -35,25 +48,28 @@ def get_description(PROJECTS_ROOT: str, project_name: str) -> str:
 def create_json_file(PROJECTS_ROOT: str) -> None:
     """
     This function creates a JSON file with the projects information
-    Parameters:
-        PROJECTS_ROOT (string): name of the directory where the projects are.
+    Args:
+        PROJECTS_ROOT (str): name of the directory where the projects are.
     Returns:
         None
     """
     # Create a list of projects
-    list_to_json = []
+    list_to_json: list[ProjectInfo] = []
     list_projects_name = get_list_projects_name(PROJECTS_ROOT)
 
     # Write the list of project information for each project name in the root
     # and add the project information to the list
     for index, project in enumerate(list_projects_name):
-        project_info = {
+        project_info: ProjectInfo = {
             "id": index,
             "name": project,
             "path": f"./{PROJECTS_ROOT}/{project}/index.html",
             "description": get_description(PROJECTS_ROOT, project),
-            "tumbnail": f"./{PROJECTS_ROOT}/{project}/src/assets/{project}.img",
         }
+
+        thumbnail_path = f"./{PROJECTS_ROOT}/{project}/src/assets/{project}.img"  # HACK: find a better way to get the image
+        if os.path.exists(thumbnail_path):
+            project_info["thumbnail"] = thumbnail_path
 
         print(f"Creating the data of -> {project}")
         list_to_json.append(project_info)

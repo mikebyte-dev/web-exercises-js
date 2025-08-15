@@ -1,68 +1,55 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/main.css" />
-    <script type="module" src="./src/main.js" defer></script>
-    <title>Web Exercises</title>
-    <link rel='icon' href="./src/assets/icons/mikebyte-balck-white.png" type="image/png" />
-  </head>
 
-  <body>
-    <header class='header-page'>
-      <img
-        class="logo"
-        src="./src/assets/icons/mikebyte.png"
-        alt="Mikebyte Logo"
-        />
-      <div class="header-title">
-        <h1>Web Exercises</h1>
-        <h3>Storage of my web exercises</h3>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/main.css" />
+  <script type="module" src="./src/main.js" defer></script>
+  <title>Web Exercises</title>
+  <link rel='icon' href="./src/assets/icons/mikebyte-balck-white.png" type="image/png" />
+</head>
+
+<body>
+  <header class='header-page'>
+    <img class="logo" src="./src/assets/icons/mikebyte.png" alt="Mikebyte Logo" />
+    <div class="header-title">
+      <h1>Web Exercises</h1>
+      <h3>Storage of my web exercises</h3>
+    </div>
+  </header>
+
+  <main class="container">
+    <header class="header-projects">
+      <h2>Projects</h2>
+      <!-- TODO: Add the projects search -->
+      <label class="label-search" for="search">
+        <input autocomplete="off" class="input-search" id="search" type="search" placeholder="Find a project ..." />
+        <button>
+          <svg class="icon search-icon">
+            <use href="./src/assets/icons/icons.svg#search"></use>
+          </svg>
+        </button>
+      </label>
     </header>
+    <section id="section-projects" class="section-projects">
+      <!-- NOTE: Example of the code of project-card implemented in in the Java-script code -->
+      <!--  <article class="project-card"> -->
+      <!--     <img src="${project.thumbnail}" alt="Thumbnail for ${project.name}" class="project-card__image"> -->
+      <!--     <div class="project-card__content"> -->
+      <!--         <h3 class="project-card__title">${project.name}</h3> -->
+      <!--         <p class="project-card__description">${project.description}</p> -->
+      <!--         <a href="${project.directory}" class="project-card__link" target="_blank">View Project</a> -->
+      <!--     </div> -->
+      <!-- </article> -->
+  </main>
 
-    <main class="container">
-      <header class="header-projects">
-        <h2>Projects</h2>
-        <!-- TODO: Add the projects search -->
-        <label class="label-search" for="search">
-          <input
-            autocomplete="off"
-            class="input-search"
-            id="search"
-            type="search"
-            placeholder="Find a project ..."
-          />
-          <button>
-            <svg class="icon search-icon">
-              <use href="./src/assets/icons/icons.svg#search"></use>
-            </svg>
-          </button>
-        </label>
-      </header>
-      <section id="section-projects" class="section-projects">
-        <!-- NOTE: Example of the code of project-card implemented in in the Java-script code -->
-        <!--  <article class="project-card"> -->
-        <!--     <img src="${project.thumbnail}" alt="Thumbnail for ${project.name}" class="project-card__image"> -->
-        <!--     <div class="project-card__content"> -->
-        <!--         <h3 class="project-card__title">${project.name}</h3> -->
-        <!--         <p class="project-card__description">${project.description}</p> -->
-        <!--         <a href="${project.directory}" class="project-card__link" target="_blank">View Project</a> -->
-        <!--     </div> -->
-        <!-- </article> -->
-    </main>
+  <footer>
+    <p>
+      Developed by:
+      <a href="https://github.com/mikebyte-dev" target="_blank" rel="noopener noreferrer">Mikebyte-dev</a>
+    </p>
+  </footer>
+</body>
 
-    <footer>
-      <p>
-        Developed by:
-        <a
-          href="https://github.com/mikebyte-dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          >mikebyte-dev</a
-        >
-      </p>
-    </footer>
-  </body>
 </html>

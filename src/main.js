@@ -5,7 +5,7 @@ const sectionProjects = document.getElementById("section-projects");
 const infoP = document.getElementById("info-paragraph");
 
 window.addEventListener("load", () => {
-  // TODO: change  the tag to the html and put here onle the change of class to hide or show the action
+  // TODO: change  the tag to the html and put here only the change of class to hide or show the action
   // sectionProjects.innerHTML =
   // console.log("loading ...");
 });
@@ -54,7 +54,7 @@ function renderProjects(projects, container) {
 const jsonProjects = "./data/projects.json";
 
 // Use an async function to handle the request cleanly
-async function loadProjets() {
+async function loadProjects() {
   try {
     // 1. Make the request to the file
     const response = await fetch(jsonProjects);
@@ -68,12 +68,12 @@ async function loadProjets() {
     // This returns a promise that resolves with the array of objects
     return response.json();
   } catch (error) {
-    // Catch and handle any errors that migth occur
+    // Catch and handle any errors that might occur
     console.log("Error loading the JSON file:", error);
   }
 }
 
-// Execute the fuction loops to load the projects
-const projects = await loadProjets();
+// Execute the function loops to load the projects
+const projects = await loadProjects();
 
 renderProjects(projects, sectionProjects);
