@@ -1,30 +1,84 @@
-// get my main element where the color will be render in different divs
-const main = document.getElementById('main')
-
-const generator = new ColorGenerator()
-
-// how many color will be rendered in the main of the page
-let numberOfColors = 3
-
-// Render the div where the colors will be rendered
-for (let i = 0; i <= numberOfColors; i++) {
-  main.innerHTML += `
-  <div class="colors" style="background-color:${generator.generateColorHex()}">${i} color</div>
-  `
-}
-
 class ColorGenerator {
-  constructor() {
-    this.colors = []
-    this.hexColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+  /**
+   * A generator of colors with many method to use in the DOM
+   * @param {number} manyColors  How many color will be init in the app
+   */
+  constructor(manyColors) {
+    this.colors = this.createColorList(manyColors)
   }
 
+  /**
+   * Create a list of objects colors with and id and the hexadecimal color
+   * @param {number} numberOfColors
+   * @returns {[]} list of colors
+   */
+  createColorList(numberOfColors) {
+    const listOfColors = []
+
+    for (let i = 0; i < numberOfColors; i++) {
+      const color = {
+        id: i,
+        color: this.generateColorHex()
+      }
+
+      listOfColors.push(color)
+    }
+
+    return listOfColors
+  }
+
+  /**
+   * Re-generate all the colors of the list of colors
+   */
+  updateColorList() {
+    this.colors.forEach(e => {
+      e.color = this.generateColorHex()
+    })
+  }
+
+
+  /**
+  * Return a random hexadecimal color string
+  * @returns {string}
+  */
   generateColorHex() {
-    let colorHex
+    const hexColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+    let colorHex = ['#']
 
     for (let i = 6; i > 0; i--) {
-
-      colorHex += this.hexColors[Math.round(Math.random() * 16)]
+      let number = Math.floor(Math.random() * hexColors.length)
+      colorHex.push(hexColors[number].toString())
     }
+
+    return colorHex.join('')
+  }
+
+  /**
+  * Render elements <div></div> inside the element give it with the colors of the in the instance
+  * @param {HTMLElement} main
+  */
+  render(main) {
+    main.innerHTML = ''
+    this.colors.forEach(e => {
+      main.innerHTML += `<div class='colors' style="background-color:${e.color};">${e.color}</div>`
+    })
   }
 }
+// get my main element where the color will be render in different divs
+main.innerHTML += `<div class='colors' style="background-color:${e.color};">${e.color}</div>`
+// Instance of the app
+const app = new ColorGenerator(5)
+// Render the div where the colors will be rendered
+app.render(main)
+
+btnRender.addEventListener('click', () => {
+  app.updateColorList()
+  app.render(main)
+})
+
+window.addEventListener("keydown", e => {
+  if (e.key === " ") {
+    app.updateColorList()
+    app.render(main)
+  }
+})
