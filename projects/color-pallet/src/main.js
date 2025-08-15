@@ -54,7 +54,7 @@ class ColorGenerator {
   }
 
   /**
-  * Render elements <div></div> inside the element give it with the colors of the in the instance
+  * Render <div></div> elements inside the given element with the colors in the instance
   * @param {HTMLElement} main
   */
   render(main) {
@@ -64,8 +64,9 @@ class ColorGenerator {
     })
   }
 }
-// get my main element where the color will be render in different divs
-main.innerHTML += `<div class='colors' style="background-color:${e.color};">${e.color}</div>`
+// get my main element where the color will be rendered in different divs
+const main = document.getElementById("main")
+const btnRender = document.getElementById("re-render")
 // Instance of the app
 const app = new ColorGenerator(5)
 // Render the div where the colors will be rendered
